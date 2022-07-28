@@ -24,6 +24,7 @@ class LoginViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(kakaoLoginButton)
+        self.view.backgroundColor = .darkGray
         self.view.addSubview(coffeeImage)
         self.view.addSubview(loginbtn)
         self.view.addSubview(registerbtn)
@@ -37,6 +38,8 @@ class LoginViewController : UIViewController {
             $0.height.equalTo(view.snp.height).multipliedBy(1.0 / 2.0)
         }
         setidpwField()
+        //login 기능 구현
+        self.loginbtn.addTarget(self, action: #selector(loginbtntap), for: .touchUpInside)
         
     }
     private func setidpwField(){
@@ -126,6 +129,34 @@ class LoginViewController : UIViewController {
             }
         }
     }
+    @objc func loginbtntap(){
+        guard let idtext = idField.text else {return}
+        guard let pwtext = pwField.text else {return}
+        if isValidEmail(id: idtext) && isValidPassword(pwd: pwtext){
+            print("성공")
+        }
+        if !isValidEmail(id: idtext){
+            let alertController = UIAlertController(title: nil, message: "아이디를 다시 확인해 주세요.", preferredStyle: .alert)
+                   alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                   self.present(alertController, animated: true, completion: nil)
+        }
+        if !isValidPassword(pwd: pwtext){
+            let alertController = UIAlertController(title: nil, message: "비밀번호 다시확인해 주세요.", preferredStyle: .alert)
+                   alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                   self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    func isValidEmail(id: String) -> Bool {
+        let emailRegEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}" // @앞에 대문자소문자 특수문자 가능하고 @ 뒤에는대문자 소문자 숫자. .기준으로 맨마지막 문자가 2글자 이상이여야함.
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEX)
+        return emailTest.evaluate(with: id)
+    }
+    func isValidPassword(pwd: String) -> Bool {
+        let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+        return passwordTest.evaluate(with: pwd)
+    }
+    
 }
 struct PreView: PreviewProvider {
     static var previews: some View {
