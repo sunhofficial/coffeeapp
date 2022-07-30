@@ -40,6 +40,7 @@ class LoginViewController : UIViewController {
         setidpwField()
         //login 기능 구현
         self.loginbtn.addTarget(self, action: #selector(loginbtntap), for: .touchUpInside)
+        self.registerbtn.addTarget(self, action: #selector(registertap), for: .touchUpInside)
         
     }
     private func setidpwField(){
@@ -145,6 +146,12 @@ class LoginViewController : UIViewController {
                    alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
                    self.present(alertController, animated: true, completion: nil)
         }
+    }
+    @objc func registertap(){
+        print("tap")
+        let registerviewcontroller = RegisterViewController()
+        self.navigationController?.pushViewController(registerviewcontroller, animated: true)
+       
     }
     func isValidEmail(id: String) -> Bool {
         let emailRegEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}" // @앞에 대문자소문자 특수문자 가능하고 @ 뒤에는대문자 소문자 숫자. .기준으로 맨마지막 문자가 2글자 이상이여야함.

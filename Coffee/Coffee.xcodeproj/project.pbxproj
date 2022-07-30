@@ -10,9 +10,9 @@
 		4D4ED169D50F76ECDF2605AD /* Pods_CoffeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A089923BD7C50288DC1A87 /* Pods_CoffeeTests.framework */; };
 		93D6871E27404B3D1BCF0B9A /* Pods_Coffee_CoffeeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6445D668C653961F06C4C9E7 /* Pods_Coffee_CoffeeUITests.framework */; };
 		D5815491E3BC6EC0153F9A67 /* Pods_Coffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90320A1E2D689B8FF83912EA /* Pods_Coffee.framework */; };
+		F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */; };
 		F09B3699288FBD910016B7E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3698288FBD910016B7E7 /* AppDelegate.swift */; };
 		F09B369B288FBD910016B7E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B369A288FBD910016B7E7 /* SceneDelegate.swift */; };
-		F09B369D288FBD910016B7E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B369C288FBD910016B7E7 /* ViewController.swift */; };
 		F09B36A2288FBD930016B7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09B36A1288FBD930016B7E7 /* Assets.xcassets */; };
 		F09B36A5288FBD930016B7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09B36A3288FBD930016B7E7 /* LaunchScreen.storyboard */; };
 		F09B36B0288FBD930016B7E7 /* CoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B36AF288FBD930016B7E7 /* CoffeeTests.swift */; };
@@ -49,10 +49,10 @@
 		A1451B950958890CE5AFDD1C /* Pods-Coffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee.release.xcconfig"; path = "Target Support Files/Pods-Coffee/Pods-Coffee.release.xcconfig"; sourceTree = "<group>"; };
 		C25C68E3BFA8D52F164220DF /* Pods-CoffeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeTests.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DADEB1B072F00A23E8433CE6 /* Pods-CoffeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeTests.release.xcconfig"; path = "Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests.release.xcconfig"; sourceTree = "<group>"; };
+		F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F09B3695288FBD910016B7E7 /* Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09B3698288FBD910016B7E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09B369A288FBD910016B7E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F09B369C288FBD910016B7E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F09B36A1288FBD930016B7E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F09B36A4288FBD930016B7E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F09B36A6288FBD930016B7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				F09B3698288FBD910016B7E7 /* AppDelegate.swift */,
 				F09B369A288FBD910016B7E7 /* SceneDelegate.swift */,
 				F09B36C8288FC39B0016B7E7 /* LoginViewController.swift */,
-				F09B369C288FBD910016B7E7 /* ViewController.swift */,
+				F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */,
 				F09B36A1288FBD930016B7E7 /* Assets.xcassets */,
 				F09B36A3288FBD930016B7E7 /* LaunchScreen.storyboard */,
 				F09B36A6288FBD930016B7E7 /* Info.plist */,
@@ -414,9 +414,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09B36C9288FC39B0016B7E7 /* LoginViewController.swift in Sources */,
-				F09B369D288FBD910016B7E7 /* ViewController.swift in Sources */,
 				F09B3699288FBD910016B7E7 /* AppDelegate.swift in Sources */,
 				F09B369B288FBD910016B7E7 /* SceneDelegate.swift in Sources */,
+				F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
