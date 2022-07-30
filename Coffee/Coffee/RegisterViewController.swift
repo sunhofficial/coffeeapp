@@ -81,7 +81,7 @@ class RegisterViewController : UIViewController{
         pw2input.isSecureTextEntry = true
         registertitle.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(20)
+            $0.top.equalToSuperview().offset(50)
         }
         idTitle.snp.makeConstraints{
             $0.bottom.equalTo(idinput.snp.top)
@@ -116,6 +116,12 @@ class RegisterViewController : UIViewController{
         nameinput.snp.makeConstraints{
             $0.top.equalTo(pw2input.snp.bottom).offset(50)
             $0.leading.equalTo(idinput.snp.leading)
+        }
+        registerBtn.snp.makeConstraints{
+            $0.top.equalTo(nameinput.snp.bottom).offset(40)
+            $0.centerX.equalToSuperview()
+            $0.leading.equalToSuperview().offset(50)
+  
         }
         
         

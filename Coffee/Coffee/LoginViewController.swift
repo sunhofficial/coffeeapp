@@ -10,6 +10,8 @@ import KakaoSDKUser
 import UIKit
 import SwiftUI
 import SnapKit
+import FirebaseAuth
+import Firebase
 class LoginViewController : UIViewController {
     let kakaoLoginButton = UIButton(type: .custom)
     let idField = UITextField()
@@ -28,6 +30,7 @@ class LoginViewController : UIViewController {
         self.view.addSubview(coffeeImage)
         self.view.addSubview(loginbtn)
         self.view.addSubview(registerbtn)
+        setidpwField()
         setloginbtn()
         
         setkakaologinbtn(kakaoLoginButton)
@@ -37,7 +40,7 @@ class LoginViewController : UIViewController {
             $0.top.equalTo(0)
             $0.height.equalTo(view.snp.height).multipliedBy(1.0 / 2.0)
         }
-        setidpwField()
+        
         //login 기능 구현
         self.loginbtn.addTarget(self, action: #selector(loginbtntap), for: .touchUpInside)
         self.registerbtn.addTarget(self, action: #selector(registertap), for: .touchUpInside)
@@ -54,8 +57,10 @@ class LoginViewController : UIViewController {
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
         }
-        idField.placeholder = "  Enter your ID"
-        pwField.placeholder = "  Enter your PW"
+        idField.attributedPlaceholder = NSAttributedString(string: "Enter your ID", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        pwField.attributedPlaceholder =          NSAttributedString(string: " Enter your PW", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+
+
         pwField.isSecureTextEntry = true
         pwField.autocapitalizationType = .none
         pwField.snp.makeConstraints{make in
@@ -86,7 +91,7 @@ class LoginViewController : UIViewController {
             make.width.equalToSuperview().multipliedBy(1.0 / 3)
             make.leading.equalTo(70)
             make.height.equalTo(40)
-            make.bottom.equalTo(kakaoLoginButton.snp.top).offset(-30)
+            make.top.equalTo(pwField.snp.bottom).offset(20)
             
         }
         loginbtn.layer.cornerRadius=40
@@ -114,7 +119,7 @@ class LoginViewController : UIViewController {
         btn.setImage(UIImage(named: "kakaologin"), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.snp.makeConstraints{
-            make in make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(100)
+            make in make.top.equalTo(loginbtn.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
     }
@@ -134,7 +139,16 @@ class LoginViewController : UIViewController {
         guard let idtext = idField.text else {return}
         guard let pwtext = pwField.text else {return}
         if isValidEmail(id: idtext) && isValidPassword(pwd: pwtext){
-            print("성공")
+            Auth.auth().signIn(withEmail: idtext, password: pwtext){authResult, error in
+                if authResult != nil {
+                    print("로그인 성공")
+                }else {
+                    let alertController = UIAlertController(title: "계정오류", message: "아이디와 비밀번호를 다시 확인해주세요", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                    self.present(alertController,animated: true,completion: nil)
+                }
+            }
+
         }
         if !isValidEmail(id: idtext){
             let alertController = UIAlertController(title: nil, message: "아이디를 다시 확인해 주세요.", preferredStyle: .alert)
