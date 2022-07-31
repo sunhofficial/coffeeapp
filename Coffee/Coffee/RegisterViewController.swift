@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
 import SwiftUI
 class RegisterViewController : UIViewController{
+    var ref : DatabaseReference = Database.database().reference()
     lazy var registertitle : UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
         label.font = UIFont.systemFont(ofSize: 40   , weight: .bold)
@@ -50,6 +55,7 @@ class RegisterViewController : UIViewController{
         button.setTitleColor(.white, for: .normal)
         return button
     }()
+    let pwcheck = UILabel()
     let idinput = UITextField()
     let pwinput = UITextField()
     let pw2input = UITextField()
@@ -67,9 +73,14 @@ class RegisterViewController : UIViewController{
         view.addSubview(pw2Title)
         view.addSubview(nameTitle)
         view.addSubview(registerBtn)
+        view.addSubview(pwcheck)
         view.backgroundColor = .white
-        
         layout()
+        idinput.delegate = self
+        pwinput.delegate = self
+        pw2input.delegate = self
+        nameinput.delegate = self
+        registerBtn.addTarget(self, action: #selector(registerbtntap), for: .touchUpInside)
     }
     private func layout() {
         self.idinput.keyboardType = .emailAddress
@@ -77,6 +88,7 @@ class RegisterViewController : UIViewController{
         pwinput.placeholder = "원하시는 비밀번호를 입력하세요"
         pw2input.placeholder = "비밀번호를 한번더 입력해주세요"
         nameinput.placeholder = "이름입력해주세요"
+        pwcheck.text = ""
         pwinput.isSecureTextEntry = true
         pw2input.isSecureTextEntry = true
         registertitle.snp.makeConstraints{
@@ -123,18 +135,105 @@ class RegisterViewController : UIViewController{
             $0.leading.equalToSuperview().offset(50)
   
         }
-        
-        
+        pwcheck.snp.makeConstraints{
+            $0.top.equalTo(pw2input.snp.bottom)
+            $0.leading.equalTo(pw2input.snp.trailing)
+        }
     }
-    
+    @objc func registerbtntap(){
+
+        guard let id = idinput.text,
+              let pw = pwinput.text,
+               let pw2=pwinput.text,
+              let  name = nameinput.text else { return }
+        if(pw != pw2){
+            let alert = UIAlertController(title: "ERROR", message: "두 비밀번호가 다릅니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        if (id == "" || pw == "" || pw2 == "" || name == ""){
+            let alert = UIAlertController(title: "ERROR", message: "모든 정보를 다채워주세요.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        //여기까지가 확인 이아래부터가 이제 파이어베이스와 연동작업
+        Auth.auth().createUser(withEmail: id, password: pw){
+            [weak self] authResult, error in
+            guard let user = authResult?.user, error == nil else{
+                print("error")
+                return
+            }
+            self.ref.child("users").child(user.uid).setValue(["name": name])
+        
+            print(user)
+            self?.dismiss(animated: true, completion: nil)
+            
+        }
+        
+   
+        }
 }
 
+extension RegisterViewController : UITextFieldDelegate {
+    func setcheckpassword(_ password : String, _ password2 : String){
+        guard password2 != "" else {
+            pwcheck.text = ""
+            return
+        }
+        if password == password2 {
+            pwcheck.textColor = .green
+            pwcheck.text = "비밀번호가 일치합니다."
+        }else{
+            pwcheck.textColor = .red
+            pwcheck.text = "비밀번호가 일치하지 않습니다."
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case idinput:
+            pwinput.becomeFirstResponder()
+        case pwinput:
+            pw2input.becomeFirstResponder()
+        case pw2input:
+            nameinput.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //사용자가 키 하나 눌렀을때마다 실행
+        if textField == pw2input{ //현재 누른 텍스트가 비밀번호확인일때만 실행
+            guard let password = pwinput.text, let passwordcheck = pw2input.text else {return true}
+            let passwordConfirm = string.isEmpty ? passwordcheck[0..<(passwordcheck.count)] : passwordcheck + string
+            // 백스페이스 눌렀을때 인덱스 0번부너 마지막글자까지 짜른다.그게 아니라면 그냥 현재 입력값을 더해준다.
+            setcheckpassword(password, passwordConfirm)
+        }
+        return true
+    }
+}
+extension String { //string을 배열처럼 쪼개기!!!!
+    subscript(_ range: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+        let end = index(start, offsetBy: min(self.count - range.lowerBound,
+                                             range.upperBound - range.lowerBound))
+        return String(self[start..<end])
+    }
+
+    subscript(_ range: CountablePartialRangeFrom<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+         return String(self[start...])
+    }
+}
 struct PreView1: PreviewProvider {
     static var previews: some View {
         RegisterViewController().toPreview().previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
+
 #if DEBUG
 extension RegisterViewController {
     private struct Preview1: UIViewControllerRepresentable {
