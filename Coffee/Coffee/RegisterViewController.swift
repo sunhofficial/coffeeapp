@@ -165,7 +165,7 @@ class RegisterViewController : UIViewController{
                 print("error")
                 return
             }
-            self.ref.child("users").child(user.uid).setValue(["name": name])
+//            ref.child("users").child(user.uid).setValue(["name": name])
         
             print(user)
             self?.dismiss(animated: true, completion: nil)
