@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseStorage
 import SwiftUI
 class RegisterViewController : UIViewController{
-    var ref : DatabaseReference = Database.database().reference()
+    var ref : DatabaseReference!
     lazy var registertitle : UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
         label.font = UIFont.systemFont(ofSize: 40   , weight: .bold)
@@ -75,6 +75,7 @@ class RegisterViewController : UIViewController{
         view.addSubview(registerBtn)
         view.addSubview(pwcheck)
         view.backgroundColor = .white
+        ref = Database.database().reference()//firebase reference 초기화
         layout()
         idinput.delegate = self
         pwinput.delegate = self
@@ -160,15 +161,14 @@ class RegisterViewController : UIViewController{
         }
         //여기까지가 확인 이아래부터가 이제 파이어베이스와 연동작업
         Auth.auth().createUser(withEmail: id, password: pw){
-            [weak self] authResult, error in
+            [self] authResult, error in
             guard let user = authResult?.user, error == nil else{
                 print("error")
                 return
             }
-//            ref.child("users").child(user.uid).setValue(["name": name])
-        
+            ref.child("users").child(user.uid).setValue(["name" :name ])
             print(user)
-            self?.dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
             
         }
         
