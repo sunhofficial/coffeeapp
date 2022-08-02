@@ -11,11 +11,13 @@ PODS:
     - KakaoSDKCommon/Common (= 2.11.0)
   - KakaoSDKUser (2.11.0):
     - KakaoSDKAuth (= 2.11.0)
+  - SwiftSoup (2.4.3)
 
 DEPENDENCIES:
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
+  - SwiftSoup
 
 SPEC REPOS:
   trunk:
@@ -23,13 +25,15 @@ SPEC REPOS:
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
+    - SwiftSoup
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   KakaoSDKAuth: b9470887e42b869725b391f4af34c4aaec42ea46
   KakaoSDKCommon: 0f59f2c1aead6012d92758e8ca46b63ea11c408b
   KakaoSDKUser: 5dbefe494c50dfdc87e4072710e503d39b41a609
+  SwiftSoup: 3384f2e618cfc1b3cbc7852c16692fe8de13fb8f
 
-PODFILE CHECKSUM: 8162048b0e1ea1018d7f199d11968573486b4bfb
+PODFILE CHECKSUM: d0f18da6405fbb934819e2ee769e35259fc90ef4
 
 COCOAPODS: 1.11.3

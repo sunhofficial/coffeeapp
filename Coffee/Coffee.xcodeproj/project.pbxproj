@@ -11,7 +11,11 @@
 		93D6871E27404B3D1BCF0B9A /* Pods_Coffee_CoffeeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6445D668C653961F06C4C9E7 /* Pods_Coffee_CoffeeUITests.framework */; };
 		D5815491E3BC6EC0153F9A67 /* Pods_Coffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90320A1E2D689B8FF83912EA /* Pods_Coffee.framework */; };
 		F0135BF128960A6D00C087AE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F0135BF028960A6D00C087AE /* FirebaseStorage */; };
+		F0135BF32896568E00C087AE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0135BF22896568E00C087AE /* ListViewController.swift */; };
+		F036EEB82898F6AE00ACB884 /* FranchiseviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */; };
 		F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */; };
+		F0957B8A28979B2500CED146 /* megacoffeecrawling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0957B8928979B2500CED146 /* megacoffeecrawling.swift */; };
+		F0957B8C28979E1700CED146 /* mainviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0957B8B28979E1700CED146 /* mainviewController.swift */; };
 		F09B3699288FBD910016B7E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3698288FBD910016B7E7 /* AppDelegate.swift */; };
 		F09B369B288FBD910016B7E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B369A288FBD910016B7E7 /* SceneDelegate.swift */; };
 		F09B36A2288FBD930016B7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09B36A1288FBD930016B7E7 /* Assets.xcassets */; };
@@ -54,7 +58,11 @@
 		A1451B950958890CE5AFDD1C /* Pods-Coffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee.release.xcconfig"; path = "Target Support Files/Pods-Coffee/Pods-Coffee.release.xcconfig"; sourceTree = "<group>"; };
 		C25C68E3BFA8D52F164220DF /* Pods-CoffeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeTests.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DADEB1B072F00A23E8433CE6 /* Pods-CoffeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeTests.release.xcconfig"; path = "Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests.release.xcconfig"; sourceTree = "<group>"; };
+		F0135BF22896568E00C087AE /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseviewController.swift; sourceTree = "<group>"; };
 		F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F0957B8928979B2500CED146 /* megacoffeecrawling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = megacoffeecrawling.swift; sourceTree = "<group>"; };
+		F0957B8B28979E1700CED146 /* mainviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainviewController.swift; sourceTree = "<group>"; };
 		F09B3695288FBD910016B7E7 /* Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09B3698288FBD910016B7E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09B369A288FBD910016B7E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,11 +159,15 @@
 		F09B3697288FBD910016B7E7 /* Coffee */ = {
 			isa = PBXGroup;
 			children = (
+				F0957B8928979B2500CED146 /* megacoffeecrawling.swift */,
 				F09B3698288FBD910016B7E7 /* AppDelegate.swift */,
 				F09B369A288FBD910016B7E7 /* SceneDelegate.swift */,
 				F0FA007B28952AA100CA229E /* GoogleService-Info.plist */,
 				F09B36C8288FC39B0016B7E7 /* LoginViewController.swift */,
 				F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */,
+				F0135BF22896568E00C087AE /* ListViewController.swift */,
+				F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */,
+				F0957B8B28979E1700CED146 /* mainviewController.swift */,
 				F09B36A1288FBD930016B7E7 /* Assets.xcassets */,
 				F09B36A3288FBD930016B7E7 /* LaunchScreen.storyboard */,
 				F09B36A6288FBD930016B7E7 /* Info.plist */,
@@ -430,9 +442,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0957B8A28979B2500CED146 /* megacoffeecrawling.swift in Sources */,
 				F09B36C9288FC39B0016B7E7 /* LoginViewController.swift in Sources */,
 				F09B3699288FBD910016B7E7 /* AppDelegate.swift in Sources */,
+				F0957B8C28979E1700CED146 /* mainviewController.swift in Sources */,
 				F09B369B288FBD910016B7E7 /* SceneDelegate.swift in Sources */,
+				F036EEB82898F6AE00ACB884 /* FranchiseviewController.swift in Sources */,
+				F0135BF32896568E00C087AE /* ListViewController.swift in Sources */,
 				F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

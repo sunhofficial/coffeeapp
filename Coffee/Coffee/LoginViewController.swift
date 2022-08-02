@@ -141,7 +141,7 @@ class LoginViewController : UIViewController {
         if isValidEmail(id: idtext) && isValidPassword(pwd: pwtext){
             Auth.auth().signIn(withEmail: idtext, password: pwtext){authResult, error in
                 if authResult != nil {
-                    print("로그인 성공")
+                    self.navigationController?.pushViewController(mainviewController(), animated: true)
                 }else {
                     let alertController = UIAlertController(title: "계정오류", message: "아이디와 비밀번호를 다시 확인해주세요", preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
@@ -162,7 +162,7 @@ class LoginViewController : UIViewController {
         }
     }
     @objc func registertap(){
-        print("tap")
+
         let registerviewcontroller = RegisterViewController()
         self.navigationController?.pushViewController(registerviewcontroller, animated: true)
        

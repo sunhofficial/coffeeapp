@@ -9,6 +9,7 @@ target 'Coffee' do
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
+  pod 'SwiftSoup'
   target 'CoffeeTests' do
     inherit! :search_paths
     # Pods for testing
