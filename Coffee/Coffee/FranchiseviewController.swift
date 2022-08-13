@@ -52,23 +52,33 @@ extension FranchiseviewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let logo = images[indexPath.row]
         switch logo{
-//        case "Back.jpeg" :
-//
-//        case "Compose.png":
-//
+        case "Back.jpeg" :
+            let BackController = BackController()
+            return self.show(BackController, sender: nil) //show = push
+        case "Compose.png":
+            let ComposeController = ComposeSpotController()
+            return self.show(ComposeController, sender: nil)
         case "Mega.png":
-            let megacontroller = megacoffeecrawling()
+            let megacontroller = MegaSpotController()
             return self.show(megacontroller, sender: nil)
-//        case "theLiter.png":
+        case "theLiter.png":
+            let thelitter = TheLitterSpotController()
+            return self.show(thelitter,sender: nil)
         case "Starbucks.png":
             let starbuckscontroller = StarbucksViewController()
             self.navigationController?.pushViewController(starbuckscontroller, animated: true)
-//        case "mammoth.png":
+        case "mammoth.png":
+            let mam = MammothSpotController()
+            return self.show(mam, sender: nil)
         case "theVenti.png":
-            let theventicontroller = ListViewController()
+            let theventicontroller = VentiSpotController()
             self.show(theventicontroller, sender: nil)
-//        case "Ediya.png":
-//        case "Juicy.png":
+        case "Ediya.png":
+            let ed = EdiyaSpotController()
+            self.show(ed, sender: nil)
+        case "Juicy.png":
+            let ju = JuicySpotController()
+            self.show(ju, sender: nil)
         default:
             let nextcontroller = UIViewController()
             self.navigationController?.pushViewController(nextcontroller, animated: true)

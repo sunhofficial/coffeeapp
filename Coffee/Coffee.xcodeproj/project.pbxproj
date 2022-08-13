@@ -12,6 +12,14 @@
 		D5815491E3BC6EC0153F9A67 /* Pods_Coffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90320A1E2D689B8FF83912EA /* Pods_Coffee.framework */; };
 		F0135BF128960A6D00C087AE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F0135BF028960A6D00C087AE /* FirebaseStorage */; };
 		F0135BF32896568E00C087AE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0135BF22896568E00C087AE /* ListViewController.swift */; };
+		F029B20028A7DBD50022E657 /* BackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B1FF28A7DBD50022E657 /* BackController.swift */; };
+		F029B20228A7DEE30022E657 /* ComposeSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20128A7DEE30022E657 /* ComposeSpotController.swift */; };
+		F029B20428A7E0B90022E657 /* TheLitterSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20328A7E0B90022E657 /* TheLitterSpotController.swift */; };
+		F029B20628A7E1060022E657 /* MegaSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20528A7E1060022E657 /* MegaSpotController.swift */; };
+		F029B20928A7E81C0022E657 /* MammothSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20828A7E81C0022E657 /* MammothSpotController.swift */; };
+		F029B20B28A7E8290022E657 /* EdiyaSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20A28A7E8290022E657 /* EdiyaSpotController.swift */; };
+		F029B20D28A7E8360022E657 /* VentiSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20C28A7E8360022E657 /* VentiSpotController.swift */; };
+		F029B20F28A7E8400022E657 /* JuicySpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20E28A7E8400022E657 /* JuicySpotController.swift */; };
 		F036EEB82898F6AE00ACB884 /* FranchiseviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */; };
 		F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */; };
 		F05F6CB02899E5B3005A5BB3 /* LogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */; };
@@ -65,6 +73,14 @@
 		C25C68E3BFA8D52F164220DF /* Pods-CoffeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeTests.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DADEB1B072F00A23E8433CE6 /* Pods-CoffeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeTests.release.xcconfig"; path = "Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests.release.xcconfig"; sourceTree = "<group>"; };
 		F0135BF22896568E00C087AE /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		F029B1FF28A7DBD50022E657 /* BackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackController.swift; sourceTree = "<group>"; };
+		F029B20128A7DEE30022E657 /* ComposeSpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeSpotController.swift; sourceTree = "<group>"; };
+		F029B20328A7E0B90022E657 /* TheLitterSpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheLitterSpotController.swift; sourceTree = "<group>"; };
+		F029B20528A7E1060022E657 /* MegaSpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaSpotController.swift; sourceTree = "<group>"; };
+		F029B20828A7E81C0022E657 /* MammothSpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MammothSpotController.swift; sourceTree = "<group>"; };
+		F029B20A28A7E8290022E657 /* EdiyaSpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdiyaSpotController.swift; sourceTree = "<group>"; };
+		F029B20C28A7E8360022E657 /* VentiSpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentiSpotController.swift; sourceTree = "<group>"; };
+		F029B20E28A7E8400022E657 /* JuicySpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuicySpotController.swift; sourceTree = "<group>"; };
 		F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseviewController.swift; sourceTree = "<group>"; };
 		F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoCell.swift; sourceTree = "<group>"; };
@@ -153,6 +169,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F029B20728A7E15F0022E657 /* Spot */ = {
+			isa = PBXGroup;
+			children = (
+				F078946A289DD944008BB1BF /* StarbucksViewController.swift */,
+				F029B20128A7DEE30022E657 /* ComposeSpotController.swift */,
+				F029B1FF28A7DBD50022E657 /* BackController.swift */,
+				F029B20328A7E0B90022E657 /* TheLitterSpotController.swift */,
+				F029B20528A7E1060022E657 /* MegaSpotController.swift */,
+				F029B20828A7E81C0022E657 /* MammothSpotController.swift */,
+				F029B20A28A7E8290022E657 /* EdiyaSpotController.swift */,
+				F029B20C28A7E8360022E657 /* VentiSpotController.swift */,
+				F029B20E28A7E8400022E657 /* JuicySpotController.swift */,
+			);
+			path = Spot;
+			sourceTree = "<group>";
+		};
 		F09B368C288FBD910016B7E7 = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +218,7 @@
 				F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */,
 				F0135BF22896568E00C087AE /* ListViewController.swift */,
 				F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */,
-				F078946A289DD944008BB1BF /* StarbucksViewController.swift */,
+				F029B20728A7E15F0022E657 /* Spot */,
 				F078946C289E1558008BB1BF /* LocationService.swift */,
 				F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */,
 				F0957B8B28979E1700CED146 /* mainviewController.swift */,
@@ -465,13 +497,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F029B20028A7DBD50022E657 /* BackController.swift in Sources */,
+				F029B20628A7E1060022E657 /* MegaSpotController.swift in Sources */,
 				F0957B8A28979B2500CED146 /* megacoffeecrawling.swift in Sources */,
+				F029B20928A7E81C0022E657 /* MammothSpotController.swift in Sources */,
 				F09B36C9288FC39B0016B7E7 /* LoginViewController.swift in Sources */,
+				F029B20B28A7E8290022E657 /* EdiyaSpotController.swift in Sources */,
 				F09B3699288FBD910016B7E7 /* AppDelegate.swift in Sources */,
+				F029B20F28A7E8400022E657 /* JuicySpotController.swift in Sources */,
 				F0957B8C28979E1700CED146 /* mainviewController.swift in Sources */,
 				F09B369B288FBD910016B7E7 /* SceneDelegate.swift in Sources */,
+				F029B20228A7DEE30022E657 /* ComposeSpotController.swift in Sources */,
 				F036EEB82898F6AE00ACB884 /* FranchiseviewController.swift in Sources */,
 				F078946D289E1558008BB1BF /* LocationService.swift in Sources */,
+				F029B20D28A7E8360022E657 /* VentiSpotController.swift in Sources */,
+				F029B20428A7E0B90022E657 /* TheLitterSpotController.swift in Sources */,
 				F0135BF32896568E00C087AE /* ListViewController.swift in Sources */,
 				F078946B289DD944008BB1BF /* StarbucksViewController.swift in Sources */,
 				F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */,
