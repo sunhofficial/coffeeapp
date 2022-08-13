@@ -14,6 +14,12 @@
 		F0135BF32896568E00C087AE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0135BF22896568E00C087AE /* ListViewController.swift */; };
 		F036EEB82898F6AE00ACB884 /* FranchiseviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */; };
 		F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */; };
+		F05F6CB02899E5B3005A5BB3 /* LogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */; };
+		F078941C289DD258008BB1BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F078941B289DD258008BB1BF /* CoreLocation.framework */; };
+		F0789466289DD39C008BB1BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0789465289DD39C008BB1BF /* QuartzCore.framework */; };
+		F0789468289DD3A3008BB1BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0789467289DD3A3008BB1BF /* SystemConfiguration.framework */; };
+		F078946B289DD944008BB1BF /* StarbucksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078946A289DD944008BB1BF /* StarbucksViewController.swift */; };
+		F078946D289E1558008BB1BF /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078946C289E1558008BB1BF /* LocationService.swift */; };
 		F0957B8A28979B2500CED146 /* megacoffeecrawling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0957B8928979B2500CED146 /* megacoffeecrawling.swift */; };
 		F0957B8C28979E1700CED146 /* mainviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0957B8B28979E1700CED146 /* mainviewController.swift */; };
 		F09B3699288FBD910016B7E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3698288FBD910016B7E7 /* AppDelegate.swift */; };
@@ -61,6 +67,13 @@
 		F0135BF22896568E00C087AE /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseviewController.swift; sourceTree = "<group>"; };
 		F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoCell.swift; sourceTree = "<group>"; };
+		F078941B289DD258008BB1BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F0789465289DD39C008BB1BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F0789467289DD3A3008BB1BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F0789469289DD42A008BB1BF /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		F078946A289DD944008BB1BF /* StarbucksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksViewController.swift; sourceTree = "<group>"; };
+		F078946C289E1558008BB1BF /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F0957B8928979B2500CED146 /* megacoffeecrawling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = megacoffeecrawling.swift; sourceTree = "<group>"; };
 		F0957B8B28979E1700CED146 /* mainviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainviewController.swift; sourceTree = "<group>"; };
 		F09B3695288FBD910016B7E7 /* Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,10 +96,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0789466289DD39C008BB1BF /* QuartzCore.framework in Frameworks */,
 				F0FA007A289528E400CA229E /* FirebaseDatabase in Frameworks */,
 				D5815491E3BC6EC0153F9A67 /* Pods_Coffee.framework in Frameworks */,
 				F0FAE6B22890CF8A002C3BC3 /* SnapKit in Frameworks */,
+				F0789468289DD3A3008BB1BF /* SystemConfiguration.framework in Frameworks */,
 				F0FA0076289528E400CA229E /* FirebaseAnalytics in Frameworks */,
+				F078941C289DD258008BB1BF /* CoreLocation.framework in Frameworks */,
 				F0FA0078289528E400CA229E /* FirebaseAuth in Frameworks */,
 				F0135BF128960A6D00C087AE /* FirebaseStorage in Frameworks */,
 			);
@@ -127,6 +143,9 @@
 		AE55AD720A684039062BDC1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0789467289DD3A3008BB1BF /* SystemConfiguration.framework */,
+				F0789465289DD39C008BB1BF /* QuartzCore.framework */,
+				F078941B289DD258008BB1BF /* CoreLocation.framework */,
 				90320A1E2D689B8FF83912EA /* Pods_Coffee.framework */,
 				6445D668C653961F06C4C9E7 /* Pods_Coffee_CoffeeUITests.framework */,
 				30A089923BD7C50288DC1A87 /* Pods_CoffeeTests.framework */,
@@ -167,10 +186,14 @@
 				F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */,
 				F0135BF22896568E00C087AE /* ListViewController.swift */,
 				F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */,
+				F078946A289DD944008BB1BF /* StarbucksViewController.swift */,
+				F078946C289E1558008BB1BF /* LocationService.swift */,
+				F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */,
 				F0957B8B28979E1700CED146 /* mainviewController.swift */,
 				F09B36A1288FBD930016B7E7 /* Assets.xcassets */,
 				F09B36A3288FBD930016B7E7 /* LaunchScreen.storyboard */,
 				F09B36A6288FBD930016B7E7 /* Info.plist */,
+				F0789469289DD42A008BB1BF /* Header.h */,
 			);
 			path = Coffee;
 			sourceTree = "<group>";
@@ -448,8 +471,11 @@
 				F0957B8C28979E1700CED146 /* mainviewController.swift in Sources */,
 				F09B369B288FBD910016B7E7 /* SceneDelegate.swift in Sources */,
 				F036EEB82898F6AE00ACB884 /* FranchiseviewController.swift in Sources */,
+				F078946D289E1558008BB1BF /* LocationService.swift in Sources */,
 				F0135BF32896568E00C087AE /* ListViewController.swift in Sources */,
+				F078946B289DD944008BB1BF /* StarbucksViewController.swift in Sources */,
 				F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */,
+				F05F6CB02899E5B3005A5BB3 /* LogoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,15 +645,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NG2NLR2Z86;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Coffee/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,6 +668,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.practice.Coffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/sunholee/Desktop/무제 폴더/coffeeapp/Coffee/Coffee/Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -647,15 +680,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NG2NLR2Z86;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Coffee/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -664,6 +703,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.practice.Coffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/sunholee/Desktop/무제 폴더/coffeeapp/Coffee/Coffee/Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

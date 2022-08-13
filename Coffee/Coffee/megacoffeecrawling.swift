@@ -7,6 +7,11 @@
 
 import UIKit
 import SwiftSoup
+class megacoffeecrawling : UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
 func crwl(){
     let megaurl = "https://www.mega-mgccoffee.com/menu/?menu_category1=1&menu_category2=1"
     guard let url = URL(string: megaurl ) else {return}

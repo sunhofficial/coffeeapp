@@ -58,7 +58,7 @@ class mainviewController : UIViewController{
         self.present(ListViewController(), animated: true)
     }
     @objc func movetoshop(){
-        self.present(ListViewController(), animated: true)
+        navigationController?.pushViewController(FranchiseviewController(), animated: true)
     }
 }
 

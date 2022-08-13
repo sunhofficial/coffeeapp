@@ -23,6 +23,9 @@ class LoginViewController : UIViewController {
         imageview.contentMode = .scaleAspectFill
         return imageview
     }()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(kakaoLoginButton)
@@ -130,7 +133,7 @@ class LoginViewController : UIViewController {
                 print(Error)
             }
             else {
-                print("login sucess")
+                self.navigationController?.pushViewController(mainviewController(), animated: true)
                 _ = OAuthToken
             }
         }
