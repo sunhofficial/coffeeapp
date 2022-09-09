@@ -10,27 +10,35 @@ import SnapKit
 import NMapsMap //카카오 api에러로 네이버로 넘어갑니다~
 import Alamofire
 import SwiftyJSON
+import SwiftSoup
 
 class StarbucksViewController : UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var resultList=[LocationService]()
-    let keyword = "스타벅스"
     var currentX : Double = 0.0
     var currentY : Double = 0.0
-    let headers: HTTPHeaders = [
-        "Authorization" : "KakaoAK 9234f0fa961e47e59f0aa090d6d550bc"
-        ]
-    let queryParam: [String: Any] = [
-        "query": "스타벅스",
-        ]
     lazy var urlString = "\(API.Base_url)?y=\(currentX)&x=\(currentY)&radius=10000&query=starbucks"
-    
+    var allmenu : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        crwl()
+        let starbuckscollectionView : UICollectionView = {
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .vertical
+            layout.sectionInset = UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
+            let cv = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+            return cv
+        }()
+        starbuckscollectionView.delegate = self
+        starbuckscollectionView.dataSource = self
+        
         let mapView = NMFMapView(frame : view.frame)
-      
+        mapView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 2)
+        starbuckscollectionView.frame = CGRect(x:0,y:view.frame.height / 2,width: view.frame.width,height: view.frame.height)
         self.view.addSubview(mapView)
+        self.view.addSubview(starbuckscollectionView)
+        starbuckscollectionView.register(Menucell.self, forCellWithReuseIdentifier: "starCell")
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -106,6 +114,52 @@ class StarbucksViewController : UIViewController, CLLocationManagerDelegate {
             
       
     }
-   
+    func crwl(){
+        let megaurl = "https://www.starbucks.co.kr/menu/drink_list.do"
+        guard let url = URL(string: megaurl ) else {return}
+        do{
+            //#menu_list > li:nth-child(1) > a > div > div.cont_text_box > div:nth-child(1) > div.cont_text_inner.text_wrap.cont_text_title > div > b
+            //#container > div.content > div.product_result_wrap.product_result_wrap01 > div > dl > dd:nth-child(2) > div.product_list > dl > dd:nth-child(2) > ul > li:nth-child(1) > dl > dd
+            //#container > div.content > div.product_result_wrap.product_result_wrap01 > div > dl > dd:nth-child(2) > div.product_list > dl > dd:nth-child(8) > ul > li:nth-child(1) > dl > dd
+            
+            let html = try String(contentsOf: url,encoding: .utf8)
+            
+            let doc: Document = try SwiftSoup.parse(html) //문제가 메뉴들이 스타벅스에서 자바스크립트로 숨겨져있어서 가져오지를 못함 ㅠㅠ
+            let menulist:Elements = try doc.select("div.product_list").select("li.menuDataSet")
+            for i in menulist.array(){
+                let menu: Elements = try i.select("dd")
+                print(try menu.text())
+            }
+            
+        }catch Exception.Error(let type, let message){
+            print("Message : \(message)")
+        }catch{
+            print("error")
+        }
+        //#menu_list > li:nth-child(2) > a > div > div.cont_text_box > div:nth-child(1) > div.cont_text_inner.text_wrap.cont_text_title > div > b
+       
+        
+        
+    }
 }
 
+extension StarbucksViewController: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return allmenu.count
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height = collectionView.frame.height
+        let itemsperRow: CGFloat = 6
+        let itemsperCol: CGFloat = 5
+        let cellwidth = width / itemsperRow
+        let cellheight = (height - 110) / itemsperCol
+        return CGSize(width: cellwidth, height: cellheight)
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "starCell", for: indexPath) as! Menucell
+        cell.textView.text = allmenu[indexPath.row]
+        return cell
+    }
+    
+}

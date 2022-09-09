@@ -62,7 +62,7 @@ class RegisterViewController : UIViewController{
     let nameinput = UITextField()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemTeal
+        self.view.backgroundColor = .black
         view.addSubview(registertitle)
         view.addSubview(idinput)
         view.addSubview(pwinput)
@@ -74,7 +74,7 @@ class RegisterViewController : UIViewController{
         view.addSubview(nameTitle)
         view.addSubview(registerBtn)
         view.addSubview(pwcheck)
-        view.backgroundColor = .white
+
         ref = Database.database().reference()//firebase reference 초기화
         layout()
         idinput.delegate = self
