@@ -145,7 +145,7 @@ class RegisterViewController : UIViewController{
 
         guard let id = idinput.text,
               let pw = pwinput.text,
-               let pw2=pwinput.text,
+               let pw2=pw2input.text,
               let  name = nameinput.text else { return }
         if(pw != pw2){
             let alert = UIAlertController(title: "ERROR", message: "두 비밀번호가 다릅니다.", preferredStyle: .alert)
@@ -167,8 +167,8 @@ class RegisterViewController : UIViewController{
                 return
             }
             ref.child("users").child(user.uid).setValue(["name" :name ])
-            print(user)
             dismiss(animated: true, completion: nil)
+            self.navigationController?.pushViewController(mainviewController(), animated: true)
             
         }
         
