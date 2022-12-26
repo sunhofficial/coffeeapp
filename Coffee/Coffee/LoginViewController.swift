@@ -35,7 +35,7 @@ class LoginViewController : UIViewController {
         self.view.addSubview(registerbtn)
         setidpwField()
         setloginbtn()
-        
+    
         setkakaologinbtn(kakaoLoginButton)
         kakaoLoginButton.addTarget(self, action: #selector(kakaologintap), for: .touchUpInside)
         coffeeImage.snp.makeConstraints{
@@ -53,21 +53,20 @@ class LoginViewController : UIViewController {
         self.view.addSubview(idField)
         self.view.addSubview(pwField)
         idField.keyboardType = .emailAddress
-
         idField.snp.makeConstraints{
-            make in make.top.equalTo(coffeeImage.snp.bottom).offset(20)
+            make in make.top.equalTo(coffeeImage.snp.bottom).offset(30)
             make.height.equalTo(50)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
         }
-        idField.attributedPlaceholder = NSAttributedString(string: "Enter your ID", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        pwField.attributedPlaceholder =          NSAttributedString(string: " Enter your PW", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        idField.attributedPlaceholder = NSAttributedString(string: "   Enter your. ID", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        pwField.attributedPlaceholder =          NSAttributedString(string: "   Enter your PW", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
 
 
         pwField.isSecureTextEntry = true
         pwField.autocapitalizationType = .none
         pwField.snp.makeConstraints{make in
-            make.top.equalTo(idField.snp.bottom).offset(16)
+            make.top.equalTo(idField.snp.bottom).offset(25)
             make.leading.equalTo(idField.snp.leading)
             make.trailing.equalTo(idField.snp.trailing)
             make.height.equalTo(50)
@@ -87,17 +86,16 @@ class LoginViewController : UIViewController {
         aa.addAttribute(.underlineStyle , value: 1, range: NSRange.init(location: 0, length: text.count))
         self.loginbtn.titleLabel?.attributedText = aa
         loginbtn.backgroundColor = .systemBrown
-//        loginbtn.layer.cornerRadius = 15
-        self.loginbtn.layer.borderWidth = 2
+        self.loginbtn.layer.borderWidth = 0.1
         self.loginbtn.layer.borderColor = UIColor.brown.cgColor
         self.loginbtn.snp.makeConstraints{ make in
             make.width.equalToSuperview().multipliedBy(1.0 / 3)
             make.leading.equalTo(70)
             make.height.equalTo(40)
-            make.top.equalTo(pwField.snp.bottom).offset(20)
+            make.top.equalTo(pwField.snp.bottom).offset(30)
             
         }
-        loginbtn.layer.cornerRadius=40
+        loginbtn.layer.cornerRadius = 10
         let text2 = "회원가입"
         self.registerbtn.setTitle(text2, for: .normal)
         registerbtn.setTitleColor(.blue, for: .normal)
@@ -107,27 +105,25 @@ class LoginViewController : UIViewController {
         bb.addAttribute(.underlineStyle , value: 1, range: NSRange.init(location: 0, length: text2.count))
         self.registerbtn.titleLabel?.attributedText = bb
         self.registerbtn.snp.makeConstraints{
-            make in make.leading.equalTo(loginbtn.snp.trailing)
+            make in make.leading.equalTo(loginbtn.snp.trailing).offset(15)
             make.height.equalTo(40)
             make.width.equalToSuperview().multipliedBy(1.0 / 3)
             make.bottom.equalTo(loginbtn.snp.bottom)
         }
-        self.registerbtn.layer.borderWidth = 2
-        self.registerbtn.layer.borderColor = UIColor.brown.cgColor
-        registerbtn.layer.cornerRadius=40
+        registerbtn.layer.cornerRadius = 10
     }
     
     private func setkakaologinbtn(_ btn : UIButton){
         self.view.addSubview(btn)
         btn.setImage(UIImage(named: "kakaologin"), for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.snp.makeConstraints{
-            make in make.top.equalTo(loginbtn.snp.bottom).offset(10)
+            make in make.top.equalTo(loginbtn.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
         }
     }
   
     @objc func kakaologintap(){
+        // 카카오톡 설치가 안되어잇는경우를 대비해 웹브라우저를 통한 카카오 로그인ㄴ 구현
         UserApi.shared.loginWithKakaoAccount{
             (OAuthToken, Error ) in if let Error = Error {
                 print(Error)
