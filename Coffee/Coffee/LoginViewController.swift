@@ -82,7 +82,7 @@ class LoginViewController : UIViewController {
         loginbtn.setTitleColor(.white, for: .normal)
         let aa = NSMutableAttributedString(string: text)
         let font = UIFont(name: "Helvetica", size: 25)
-        aa.addAttribute(.font, value: font, range: NSRange.init(location: 0, length: text.count))
+        aa.addAttribute(.font, value: font ?? 0, range: NSRange.init(location: 0, length: text.count))
         aa.addAttribute(.underlineStyle , value: 1, range: NSRange.init(location: 0, length: text.count))
         self.loginbtn.titleLabel?.attributedText = aa
         loginbtn.backgroundColor = .systemBrown
@@ -99,9 +99,9 @@ class LoginViewController : UIViewController {
         let text2 = "회원가입"
         self.registerbtn.setTitle(text2, for: .normal)
         registerbtn.setTitleColor(.blue, for: .normal)
-        registerbtn.backgroundColor = .systemGray3
+        registerbtn.backgroundColor = .systemBrown
         let bb = NSMutableAttributedString(string: text2)
-        bb.addAttribute(.font, value: font, range: NSRange.init(location: 0, length: text2.count))
+        bb.addAttribute(.font, value: font!, range: NSRange.init(location: 0, length: text2.count))
         bb.addAttribute(.underlineStyle , value: 1, range: NSRange.init(location: 0, length: text2.count))
         self.registerbtn.titleLabel?.attributedText = bb
         self.registerbtn.snp.makeConstraints{
@@ -129,7 +129,7 @@ class LoginViewController : UIViewController {
                 print(Error)
             }
             else {
-                self.navigationController?.pushViewController(mainviewController(), animated: true)
+                self.navigationController?.pushViewController(MainVC(), animated: true)
                 _ = OAuthToken
             }
         }
@@ -140,7 +140,7 @@ class LoginViewController : UIViewController {
         if isValidEmail(id: idtext) && isValidPassword(pwd: pwtext){
             Auth.auth().signIn(withEmail: idtext, password: pwtext){authResult, error in
                 if authResult != nil {
-                    self.navigationController?.pushViewController(mainviewController(), animated: true)
+                    self.navigationController?.pushViewController(MainVC(), animated: true)
                 }else {
                     let alertController = UIAlertController(title: "계정오류", message: "아이디와 비밀번호를 다시 확인해주세요", preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
@@ -167,7 +167,7 @@ class LoginViewController : UIViewController {
        
     }
     func isValidEmail(id: String) -> Bool {
-        let emailRegEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}" // @앞에 대문자소문자 특수문자 가능하고 @ 뒤에는대문자 소문자 숫자. .기준으로 맨마지막 문자가 2글자 이상이여야함.
+        let emailRegEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,10}" // @앞에 대문자소문자 특수문자 가능하고 @ 뒤에는대문자 소문자 숫자. .기준으로 맨마지막 문자가 2글자 이상10글자이하
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEX)
         return emailTest.evaluate(with: id)
     }

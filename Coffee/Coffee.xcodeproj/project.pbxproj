@@ -21,7 +21,7 @@
 		F029B20B28A7E8290022E657 /* EdiyaSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20A28A7E8290022E657 /* EdiyaSpotController.swift */; };
 		F029B20D28A7E8360022E657 /* VentiSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20C28A7E8360022E657 /* VentiSpotController.swift */; };
 		F029B20F28A7E8400022E657 /* JuicySpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029B20E28A7E8400022E657 /* JuicySpotController.swift */; };
-		F036EEB82898F6AE00ACB884 /* FranchiseviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */; };
+		F036EEB82898F6AE00ACB884 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036EEB72898F6AE00ACB884 /* MainVC.swift */; };
 		F0495A8528936DFD006C4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */; };
 		F05F6CB02899E5B3005A5BB3 /* LogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */; };
 		F078941C289DD258008BB1BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F078941B289DD258008BB1BF /* CoreLocation.framework */; };
@@ -30,7 +30,6 @@
 		F078946B289DD944008BB1BF /* StarbucksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078946A289DD944008BB1BF /* StarbucksViewController.swift */; };
 		F078946D289E1558008BB1BF /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078946C289E1558008BB1BF /* LocationService.swift */; };
 		F0957B8A28979B2500CED146 /* megacoffeecrawling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0957B8928979B2500CED146 /* megacoffeecrawling.swift */; };
-		F0957B8C28979E1700CED146 /* mainviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0957B8B28979E1700CED146 /* mainviewController.swift */; };
 		F09B3699288FBD910016B7E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3698288FBD910016B7E7 /* AppDelegate.swift */; };
 		F09B369B288FBD910016B7E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B369A288FBD910016B7E7 /* SceneDelegate.swift */; };
 		F09B36A2288FBD930016B7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09B36A1288FBD930016B7E7 /* Assets.xcassets */; };
@@ -83,7 +82,7 @@
 		F029B20A28A7E8290022E657 /* EdiyaSpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdiyaSpotController.swift; sourceTree = "<group>"; };
 		F029B20C28A7E8360022E657 /* VentiSpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentiSpotController.swift; sourceTree = "<group>"; };
 		F029B20E28A7E8400022E657 /* JuicySpotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuicySpotController.swift; sourceTree = "<group>"; };
-		F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseviewController.swift; sourceTree = "<group>"; };
+		F036EEB72898F6AE00ACB884 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoCell.swift; sourceTree = "<group>"; };
 		F078941B289DD258008BB1BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -93,7 +92,6 @@
 		F078946A289DD944008BB1BF /* StarbucksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksViewController.swift; sourceTree = "<group>"; };
 		F078946C289E1558008BB1BF /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F0957B8928979B2500CED146 /* megacoffeecrawling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = megacoffeecrawling.swift; sourceTree = "<group>"; };
-		F0957B8B28979E1700CED146 /* mainviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainviewController.swift; sourceTree = "<group>"; };
 		F09B3695288FBD910016B7E7 /* Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09B3698288FBD910016B7E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09B369A288FBD910016B7E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,12 +217,11 @@
 				F09B36C8288FC39B0016B7E7 /* LoginViewController.swift */,
 				F0495A8428936DFD006C4FD7 /* RegisterViewController.swift */,
 				F0135BF22896568E00C087AE /* ListViewController.swift */,
-				F036EEB72898F6AE00ACB884 /* FranchiseviewController.swift */,
+				F036EEB72898F6AE00ACB884 /* MainVC.swift */,
 				F029B20728A7E15F0022E657 /* Spot */,
 				F078946C289E1558008BB1BF /* LocationService.swift */,
 				F05F6CAF2899E5B3005A5BB3 /* LogoCell.swift */,
 				F02326AB28A8F3B10019CBB5 /* MenuCell.swift */,
-				F0957B8B28979E1700CED146 /* mainviewController.swift */,
 				F09B36A1288FBD930016B7E7 /* Assets.xcassets */,
 				F09B36A3288FBD930016B7E7 /* LaunchScreen.storyboard */,
 				F09B36A6288FBD930016B7E7 /* Info.plist */,
@@ -509,10 +506,9 @@
 				F02326AC28A8F3B10019CBB5 /* MenuCell.swift in Sources */,
 				F09B3699288FBD910016B7E7 /* AppDelegate.swift in Sources */,
 				F029B20F28A7E8400022E657 /* JuicySpotController.swift in Sources */,
-				F0957B8C28979E1700CED146 /* mainviewController.swift in Sources */,
 				F09B369B288FBD910016B7E7 /* SceneDelegate.swift in Sources */,
 				F029B20228A7DEE30022E657 /* ComposeSpotController.swift in Sources */,
-				F036EEB82898F6AE00ACB884 /* FranchiseviewController.swift in Sources */,
+				F036EEB82898F6AE00ACB884 /* MainVC.swift in Sources */,
 				F078946D289E1558008BB1BF /* LocationService.swift in Sources */,
 				F029B20D28A7E8360022E657 /* VentiSpotController.swift in Sources */,
 				F029B20428A7E0B90022E657 /* TheLitterSpotController.swift in Sources */,

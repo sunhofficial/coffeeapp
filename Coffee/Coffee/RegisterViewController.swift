@@ -17,6 +17,7 @@ class RegisterViewController : UIViewController{
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
         label.font = UIFont.systemFont(ofSize: 40   , weight: .bold)
         label.text = "회원가입"
+        label.textColor = UIColor(named: "Color")
         return label
     }()
     
@@ -24,6 +25,7 @@ class RegisterViewController : UIViewController{
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.text = "아이디"
+        label.textColor = UIColor(named: "Color")
         return label
     }()
     
@@ -62,7 +64,7 @@ class RegisterViewController : UIViewController{
     let nameinput = UITextField()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+
         view.addSubview(registertitle)
         view.addSubview(idinput)
         view.addSubview(pwinput)
@@ -159,6 +161,7 @@ class RegisterViewController : UIViewController{
             self.present(alert, animated: true, completion: nil)
             return
         }
+        
         //여기까지가 확인 이아래부터가 이제 파이어베이스와 연동작업
         Auth.auth().createUser(withEmail: id, password: pw){
             [self] authResult, error in
@@ -168,7 +171,7 @@ class RegisterViewController : UIViewController{
             }
             ref.child("users").child(user.uid).setValue(["name" :name ])
             dismiss(animated: true, completion: nil)
-            self.navigationController?.pushViewController(mainviewController(), animated: true)
+            self.navigationController?.pushViewController(MainVC(), animated: true)
             
         }
         

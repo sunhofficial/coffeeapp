@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class FranchiseviewController : UIViewController{
+class MainVC : UIViewController{
     var customCollectionView: UICollectionView?
     var images = ["Back.jpeg","Compose.png","Mega.png","theLiter.png","Starbucks.png","mammoth.png","theVenti.png","Ediya.png","Juicy.png"]
     override func viewDidLoad(){
@@ -31,7 +31,7 @@ class FranchiseviewController : UIViewController{
 
     
 }
-extension FranchiseviewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
@@ -88,20 +88,20 @@ extension FranchiseviewController: UICollectionViewDelegate, UICollectionViewDat
 }
 struct PreView3: PreviewProvider {
     static var previews: some View {
-        FranchiseviewController().toPreview().previewInterfaceOrientation(.portraitUpsideDown)
+        MainVC().toPreview().previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
 
 #if DEBUG
-extension FranchiseviewController {
+extension MainVC {
     private struct Preview3: UIViewControllerRepresentable {
-            let viewController: FranchiseviewController
+            let viewController: MainVC
 
-            func makeUIViewController(context: Context) -> FranchiseviewController {
+            func makeUIViewController(context: Context) -> MainVC {
                 return viewController
             }
 
-            func updateUIViewController(_ uiViewController: FranchiseviewController, context: Context) {
+            func updateUIViewController(_ uiViewController: MainVC, context: Context) {
             }
         }
 
