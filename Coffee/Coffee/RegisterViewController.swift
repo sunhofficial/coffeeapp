@@ -64,7 +64,7 @@ class RegisterViewController : UIViewController{
     let nameinput = UITextField()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor(named: "backgroundcolor")
         view.addSubview(registertitle)
         view.addSubview(idinput)
         view.addSubview(pwinput)
@@ -143,6 +143,11 @@ class RegisterViewController : UIViewController{
             $0.leading.equalTo(pw2input.snp.trailing)
         }
     }
+    func isValidEmail(id: String) -> Bool {
+        let emailRegEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,10}" // @앞에 대문자소문자 특수문자 가능하고 @ 뒤에는대문자 소문자 숫자. .기준으로 맨마지막 문자가 2글자 이상10글자이하
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEX)
+        return emailTest.evaluate(with: id)
+    }
     @objc func registerbtntap(){
 
         guard let id = idinput.text,
@@ -157,6 +162,18 @@ class RegisterViewController : UIViewController{
         }
         if (id == "" || pw == "" || pw2 == "" || name == ""){
             let alert = UIAlertController(title: "ERROR", message: "모든 정보를 다채워주세요.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        if(!isValidEmail(id: id)){
+            let alert = UIAlertController(title: "ERROR", message: "ID는 이메일 형식입니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        if(pw.count<8 || pw2.count<8){
+            let alert = UIAlertController(title: "ERROR", message: "비밀번호는 8글자 이상으로 해주세요", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
